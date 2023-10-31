@@ -118,11 +118,11 @@ const AddMaterial = () => {
                   </Icon>
                 </Box>
                 <Box className={styles.delete_bar}>
-                  <input type='number' className={styles.text_field} placeholder='Quantity in bags' name='quantity' onChange={(e) => { updateQuantityData(e, val.id) }} value={val.quantity}/>
+                  <input type='number' className={styles.text_field} placeholder='Quantity in bags' name='quantity' onChange={(e) => { updateQuantityData(e, val.id) }} value={val.quantity == 0? '' : val.quantity}/>
                   <Typography color='yellow'>x</Typography>
-                  <input type='number' className={styles.text_field} placeholder='Unit Price' name='price' onChange={(e) => { updatePriceData(e, val.id) }} value={val.price}/>
+                  <input type='number' className={styles.text_field} placeholder='Unit Price' name='price' onChange={(e) => { updatePriceData(e, val.id) }} value={val.price == 0 ? '' : val.price}/>
                   <Typography color='yellow'>=</Typography>
-                  <input type='number' className={styles.text_field} placeholder='Total Price' value={val.totalAmount} readOnly />
+                  <input type='number' className={styles.text_field} placeholder='Total Price' value={val.totalAmount == 0 ? '' : val.totalAmount} readOnly />
                 </Box>
               </Box>
             </Box>
