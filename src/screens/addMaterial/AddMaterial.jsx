@@ -15,7 +15,7 @@ const AddMaterial = () => {
   const [data, setData] = useState([]);
   const [calculation, setCalculation] = useState({
     id: 0,
-    quantity: 0,
+    quantity: localData ? localData.quantity: 0,
     price: 0
   });
 
@@ -66,10 +66,19 @@ const AddMaterial = () => {
     )
   }
 
-  const updateData = (e, id) => {
+  const updateQuantityData = (e, id) => {
     setCalculation({
       ...calculation,
-      [e.target.name]: e.target.value,
+      quantity : e.target.value,
+      price : 0,
+      id: id
+    }
+    )
+  }
+  const updatePriceData = (e, id) => {
+    setCalculation({
+      ...calculation,
+      price: e.target.value,
       id: id
     }
     )
@@ -109,9 +118,9 @@ const AddMaterial = () => {
                   </Icon>
                 </Box>
                 <Box className={styles.delete_bar}>
-                  <input type='number' className={styles.text_field} placeholder='Quantity in bags' name='quantity' onChange={(e) => { updateData(e, val.id) }} />
+                  <input type='number' className={styles.text_field} placeholder='Quantity in bags' name='quantity' onChange={(e) => { updateQuantityData(e, val.id) }} value={val.quantity}/>
                   <Typography color='yellow'>x</Typography>
-                  <input type='number' className={styles.text_field} placeholder='Unit Price' name='price' onChange={(e) => { updateData(e, val.id) }} />
+                  <input type='number' className={styles.text_field} placeholder='Unit Price' name='price' onChange={(e) => { updatePriceData(e, val.id) }} value={val.price}/>
                   <Typography color='yellow'>=</Typography>
                   <input type='number' className={styles.text_field} placeholder='Total Price' value={val.totalAmount} readOnly />
                 </Box>
