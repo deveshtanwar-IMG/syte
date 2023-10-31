@@ -15,7 +15,7 @@ const AddMaterial = () => {
   const [data, setData] = useState([]);
   const [calculation, setCalculation] = useState({
     id: 0,
-    quantity: localData ? localData.quantity: 0,
+    quantity: 0,
     price: 0
   });
 
@@ -86,6 +86,7 @@ const AddMaterial = () => {
 
   const storageHandler = () => {
     localStorage.setItem('material', JSON.stringify(data));
+
   }
 
   return (
