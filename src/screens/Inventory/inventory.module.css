@@ -1,0 +1,30 @@
+.next_btn {
+    position: absolute;
+    bottom: 0;
+    margin: 20px 0px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.items_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 5px 15px;
+}
+
+.materials {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 5px 8px;
+    width: 100;
+    font-size: 14px;
+}
