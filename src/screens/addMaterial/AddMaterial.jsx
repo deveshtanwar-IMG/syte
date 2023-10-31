@@ -57,13 +57,12 @@ const AddMaterial = () => {
       return index !== find;
     }));
 
+    const update = data.filter((val, index) => {
+      return index !== find;
+    })
+
     dispatch(removeItem(val));
-    // for removing items from localStorage
-    setData((state) => {
-      localStorage.setItem('material', JSON.stringify(state));
-      return state;
-    }
-    )
+    localStorage.setItem('material', JSON.stringify(update));
   }
 
   const updateQuantityData = (e, id) => {
